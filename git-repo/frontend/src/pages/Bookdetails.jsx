@@ -8,19 +8,16 @@ function Bookdetails() {
   const location = useLocation();
   const[book,setBook] = useState();
   let navigate = useNavigate();
-  
-  
+ 
   useEffect(()=>{
       setBook(location.state.book);
-      if (!window.localStorage.getItem("loginEmail")) {
-        navigate("/", { replace: true });
-      }
-    
-  },[book])
+      
+  },[])
  
-
+  if(book){
   return (
-    <div>
+ 
+      <div>
      
      <button className='container btn m-10'>
            <Link to = "/Books">
@@ -59,12 +56,12 @@ function Bookdetails() {
      
      
       
-        
-     
-     
-    </div>
+      </div>
+  
    
   )
+  }
+  
 }
 
 export default Bookdetails
