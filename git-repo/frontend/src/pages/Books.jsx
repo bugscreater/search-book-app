@@ -31,7 +31,7 @@ function Books() {
   };
 
   const handleSubmit = async(e) => {
-    window.localStorage.clear();
+   
     window.localStorage.setItem("search-book",bookname);
     e.preventDefault();
     setResult();
